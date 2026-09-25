@@ -19,15 +19,15 @@ export function ContactForm() {
         role="status"
         className="flex h-full flex-col items-start justify-center gap-3 rounded-2xl border border-border bg-card p-8"
       >
-        <CheckCircle2 className="size-8 text-accent" aria-hidden="true" />
-        <p className="font-serif text-2xl">Message sent</p>
+        <CheckCircle2 className="size-8 text-primary" aria-hidden="true" />
+        <p className="text-xl font-semibold">Message sent</p>
         <p className="text-muted-foreground">{state.message}</p>
       </div>
     )
   }
 
   return (
-    <form action={formAction} noValidate className="flex flex-col gap-5 rounded-2xl border border-border bg-card p-6 md:p-8">
+    <form action={formAction} noValidate className="flex flex-col gap-5 rounded-xl border border-border bg-card p-6 shadow-xs md:p-8">
       <div className="grid gap-5 sm:grid-cols-2">
         <Field label="Name" name="name" error={state.errors?.name}>
           <Input
@@ -62,7 +62,7 @@ export function ContactForm() {
           id="message"
           name="message"
           rows={6}
-          placeholder="Tell me a little about your project, timeline, and budget."
+          placeholder="Your message"
           defaultValue={state.values?.message}
           aria-invalid={Boolean(state.errors?.message)}
           aria-describedby={state.errors?.message ? 'message-error' : undefined}
@@ -80,13 +80,13 @@ export function ContactForm() {
         <p role="alert" className="text-sm text-destructive">
           {state.status === 'error' ? state.message : null}
         </p>
-        <Button type="submit" disabled={pending} className="h-11 rounded-full px-6">
+        <Button type="submit" disabled={pending} className="h-11 rounded-md px-6">
           {pending ? (
             <Loader2 className="animate-spin" aria-hidden="true" />
           ) : (
             <Send aria-hidden="true" />
           )}
-          {pending ? 'Sending…' : 'Send message'}
+          {pending ? 'Sending…' : 'Send Message'}
         </Button>
       </div>
     </form>

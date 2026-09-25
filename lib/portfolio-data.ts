@@ -1,80 +1,110 @@
 export const profile = {
-  name: 'Alex Morgan',
-  role: 'Product Designer & Frontend Engineer',
-  location: 'Lisbon, Portugal',
-  email: 'hello@alexmorgan.dev',
-  availability: 'Open to freelance & full-time roles',
+  name: 'Mayuresh Nagwekar',
+  role: 'Physics & Engineering Subject-Matter Expert — AI/LLM Research',
+  intro:
+    'M.Tech graduate from NIT Warangal with hands-on experience in AI/ML, embedded systems, FPGA design, and signal processing. Experienced in AI benchmark evaluation, technical content validation, and research, with an IEEE publication and conference technical-review experience.',
+  email: 'mayureshnagvekar9@gmail.com',
+  linkedin: {
+    label: 'linkedin.com/in/mayuresh-n-029610216',
+    href: 'https://www.linkedin.com/in/mayuresh-n-029610216',
+  },
 }
 
-export const socials = [
-  { label: 'GitHub', handle: '@alexmorgan', href: 'https://github.com' },
-  { label: 'LinkedIn', handle: 'in/alexmorgan', href: 'https://linkedin.com' },
-  { label: 'X / Twitter', handle: '@alexmakes', href: 'https://x.com' },
-  { label: 'Dribbble', handle: 'alexmorgan', href: 'https://dribbble.com' },
+export const aboutHighlights = [
+  {
+    title: 'Education',
+    text: 'M.Tech in Embedded and Machine Learning Systems from NIT Warangal.',
+  },
+  {
+    title: 'Engineering',
+    text: 'Experience in AI/ML, embedded systems, FPGA design, and signal processing.',
+  },
+  {
+    title: 'AI Evaluation',
+    text: 'AI benchmark evaluation and technical content validation.',
+  },
+  {
+    title: 'Research',
+    text: 'IEEE research publication and conference technical-review experience.',
+  },
 ]
 
 export type Project = {
   title: string
-  year: string
   description: string
   tags: string[]
-  href: string
 }
 
 export const projects: Project[] = [
   {
-    title: 'Ledgerly',
-    year: '2026',
+    title: 'End-to-End ML & Cloud Deployment Pipeline',
     description:
-      'A calm, keyboard-first budgeting app for freelancers. Designed the system end to end and built the web client.',
-    tags: ['Product Design', 'Next.js', 'TypeScript'],
-    href: '#',
+      'A machine learning pipeline built with Python and Scikit-learn, containerized with Docker, and deployed to AWS and Azure.',
+    tags: ['Python', 'Scikit-learn', 'Docker', 'AWS', 'Azure'],
   },
   {
-    title: 'Fieldnotes',
-    year: '2025',
+    title: 'AI-Powered Document Intelligence Chatbot',
     description:
-      'A collaborative research repository that turns interview transcripts into searchable, taggable insights.',
-    tags: ['UX Research', 'React', 'Design System'],
-    href: '#',
+      'A retrieval-augmented (RAG) chatbot for querying documents, built with LangChain and Streamlit and powered by xAI Grok-4.',
+    tags: ['Python', 'LangChain', 'Streamlit', 'RAG', 'xAI Grok-4'],
   },
   {
-    title: 'Tidewater Coffee',
-    year: '2025',
+    title: 'FPGA Accelerator for MobileNetV2 using HLS',
     description:
-      'E-commerce redesign for an independent roaster — conversion up 32% after launch with a lighter checkout flow.',
-    tags: ['E-commerce', 'Product Design', 'Next.js'],
-    href: '#',
-  },
-  {
-    title: 'Atlas UI',
-    year: '2024',
-    description:
-      'An open-source, accessible component library with 40+ primitives, documented tokens, and theming support.',
-    tags: ['Design System', 'React', 'Accessibility'],
-    href: '#',
-  },
-  {
-    title: 'Pulse Health',
-    year: '2023',
-    description:
-      'A patient dashboard that simplifies lab results into plain language, tested with 60+ participants.',
-    tags: ['UX Research', 'Accessibility', 'TypeScript'],
-    href: '#',
+      'A hardware accelerator for the MobileNetV2 network developed with Vitis HLS and Vivado, targeting the PYNQ-ZU board.',
+    tags: ['Vitis HLS', 'Vivado', 'C++', 'Python', 'PYNQ-ZU'],
   },
 ]
 
 export const skillGroups = [
   {
-    title: 'Design',
-    skills: ['Product strategy', 'Interaction design', 'Prototyping', 'Design systems', 'Figma', 'User research'],
+    title: 'AI/ML',
+    skills: [
+      'Python',
+      'Machine Learning',
+      'Scikit-learn',
+      'Pandas',
+      'NumPy',
+      'EDA',
+      'LangChain',
+      'RAG',
+      'Prompt Engineering',
+    ],
   },
   {
-    title: 'Engineering',
-    skills: ['TypeScript', 'React', 'Next.js', 'Tailwind CSS', 'Node.js', 'PostgreSQL'],
+    title: 'Digital Design',
+    skills: ['Verilog HDL', 'RTL Design', 'FSM', 'STA', 'Testbench', 'Vivado', 'Vitis HLS', 'ModelSim'],
   },
   {
-    title: 'Craft',
-    skills: ['Accessibility (WCAG)', 'Motion design', 'Performance', 'Technical writing', 'Mentoring'],
+    title: 'Embedded',
+    skills: ['C/C++', 'Embedded C', 'ARM STM32', 'FPGA', 'RTOS', 'GPIO'],
   },
+  {
+    title: 'Tools & Cloud',
+    skills: [
+      'Linux',
+      'Git/GitHub',
+      'Docker',
+      'AWS',
+      'Azure',
+      'STM32CubeIDE',
+      'Keil',
+      'JTAG/SWD',
+      'Oscilloscope',
+      'Logic Analyzer',
+    ],
+  },
+]
+
+export const publication = {
+  title: 'Seismic Random Noise Attenuation using Variational Quantum Denoising Technique',
+  venue: 'IEEE GRSL',
+  summary:
+    'Proposes a framework combining the Quantum Fourier Transform (QFT) with variational optimization for adaptive attenuation of random noise in seismic data.',
+}
+
+export const experience = [
+  { role: 'Technical Reviewer', org: 'IEEE DELCON 2025' },
+  { role: 'AI/ML Intern', org: 'TRL FutureX' },
+  { role: 'Research Intern', org: 'National Institute of Technology Karnataka, Surathkal' },
 ]

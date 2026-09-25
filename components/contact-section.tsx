@@ -1,51 +1,49 @@
 import { ArrowUpRight, Mail } from 'lucide-react'
 import { ContactForm } from '@/components/contact-form'
 import { SectionHeading } from '@/components/section-heading'
-import { profile, socials } from '@/lib/portfolio-data'
+import { profile } from '@/lib/portfolio-data'
 
 export function ContactSection() {
+  const links = [
+    { label: 'Email', value: profile.email, href: `mailto:${profile.email}`, external: false },
+    { label: 'LinkedIn', value: profile.linkedin.label, href: profile.linkedin.href, external: true },
+  ]
+
   return (
-    <section id="contact" aria-labelledby="contact-heading" className="scroll-mt-20 border-t border-border">
-      <div className="mx-auto max-w-5xl px-6 py-20">
-        <SectionHeading id="contact-heading" index="03 — Contact" title="Let's work together" />
-        <div className="grid gap-10 md:grid-cols-[1fr_1.4fr]">
-          <div className="flex flex-col gap-8">
-            <p className="text-lg leading-relaxed text-muted-foreground text-pretty">
-              Have a project in mind, a role to fill, or just want to say hi? Send a note and I&apos;ll
-              reply within two business days.
-            </p>
-            <a
-              href={`mailto:${profile.email}`}
-              className="inline-flex w-fit items-center gap-2 font-serif text-2xl underline decoration-accent decoration-2 underline-offset-6 hover:decoration-foreground"
-            >
-              <Mail className="size-5" aria-hidden="true" />
-              {profile.email}
-            </a>
-            <div>
-              <h3 className="mb-3 font-mono text-xs tracking-widest text-muted-foreground uppercase">
-                Elsewhere
-              </h3>
-              <ul className="divide-y divide-border border-y border-border">
-                {socials.map((social) => (
-                  <li key={social.label}>
-                    <a
-                      href={social.href}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="group flex items-center justify-between py-3 text-sm"
-                    >
-                      <span className="font-medium">{social.label}</span>
-                      <span className="flex items-center gap-1.5 text-muted-foreground transition-colors group-hover:text-accent">
-                        {social.handle}
-                        <ArrowUpRight className="size-4" aria-hidden="true" />
-                        <span className="sr-only">(opens in a new tab)</span>
-                      </span>
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
-          </div>
+    <section
+      id="contact"
+      aria-labelledby="contact-heading"
+      className="scroll-mt-24 border-t border-border bg-muted/60"
+    >
+      <div className="mx-auto max-w-6xl px-6 py-20">
+        <SectionHeading id="contact-heading" eyebrow="Contact" title="Get in Touch" />
+        <div className="grid gap-8 md:grid-cols-[1fr_1.4fr]">
+          <ul className="flex flex-col gap-4">
+            {links.map((link) => (
+              <li key={link.label}>
+                <a
+                  href={link.href}
+                  {...(link.external ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
+                  className="group flex items-center gap-4 rounded-xl border border-border bg-card p-5 shadow-xs transition-all hover:-translate-y-0.5 hover:border-primary/30 hover:shadow-md"
+                >
+                  <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-accent text-primary">
+                    {link.external ? (
+                      <ArrowUpRight className="size-5" aria-hidden="true" />
+                    ) : (
+                      <Mail className="size-5" aria-hidden="true" />
+                    )}
+                  </span>
+                  <span className="min-w-0">
+                    <span className="block text-sm font-semibold">{link.label}</span>
+                    <span className="block truncate text-sm text-muted-foreground transition-colors group-hover:text-primary">
+                      {link.value}
+                    </span>
+                  </span>
+                  {link.external ? <span className="sr-only">(opens in a new tab)</span> : null}
+                </a>
+              </li>
+            ))}
+          </ul>
           <ContactForm />
         </div>
       </div>

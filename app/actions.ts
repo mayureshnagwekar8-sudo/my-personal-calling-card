@@ -35,5 +35,5 @@ export async function submitContact(_prev: ContactState, formData: FormData): Pr
   // Connect an email provider (e.g. Resend) here to deliver messages to your inbox.
   console.log('[contact] New message from', values.email)
 
-  return { status: 'success', message: `Thanks, ${values.name}! I'll get back to you within two days.` }
+  return { status: 'success', message: `Thanks, ${values.name}! Your message has been received.` }
 }

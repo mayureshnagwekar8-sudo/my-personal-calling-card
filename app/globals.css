@@ -6,7 +6,7 @@
 
 @theme inline {
   --font-sans: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
-  --font-serif: var(--font-instrument-serif), ui-serif, Georgia, serif;
+  --font-mono: var(--font-geist-mono), ui-monospace, SFMono-Regular, monospace;
   --color-ring: var(--ring);
   --color-input: var(--input);
   --color-border: var(--border);
@@ -36,24 +36,24 @@
 
 :root {
   color-scheme: light;
-  --background: oklch(0.982 0.006 85);
-  --foreground: oklch(0.2 0.012 60);
-  --card: oklch(0.995 0.003 85);
-  --card-foreground: oklch(0.2 0.012 60);
-  --popover: oklch(0.995 0.003 85);
-  --popover-foreground: oklch(0.2 0.012 60);
-  --primary: oklch(0.3 0.11 262);
-  --primary-foreground: oklch(0.985 0.004 250);
-  --secondary: oklch(0.945 0.01 80);
-  --secondary-foreground: oklch(0.2 0.012 60);
-  --muted: oklch(0.945 0.01 80);
-  --muted-foreground: oklch(0.48 0.014 60);
-  --accent: oklch(0.42 0.14 262);
-  --accent-foreground: oklch(0.985 0.004 250);
+  --background: oklch(1 0 0);
+  --foreground: oklch(0.21 0.03 264);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.21 0.03 264);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.21 0.03 264);
+  --primary: oklch(0.38 0.15 264);
+  --primary-foreground: oklch(0.985 0.005 264);
+  --secondary: oklch(0.975 0.006 264);
+  --secondary-foreground: oklch(0.21 0.03 264);
+  --muted: oklch(0.975 0.006 264);
+  --muted-foreground: oklch(0.5 0.025 264);
+  --accent: oklch(0.955 0.025 264);
+  --accent-foreground: oklch(0.38 0.15 264);
   --destructive: oklch(0.577 0.245 27.325);
-  --border: oklch(0.9 0.01 80);
-  --input: oklch(0.88 0.012 80);
-  --ring: oklch(0.42 0.14 262);
+  --border: oklch(0.92 0.012 264);
+  --input: oklch(0.9 0.014 264);
+  --ring: oklch(0.38 0.15 264);
   --radius: 0.625rem;
 }
 
@@ -68,8 +68,8 @@
     @apply bg-background text-foreground font-sans;
   }
   ::selection {
-    background: var(--accent);
-    color: var(--accent-foreground);
+    background: var(--primary);
+    color: var(--primary-foreground);
   }
 }
 

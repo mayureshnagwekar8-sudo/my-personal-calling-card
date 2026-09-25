@@ -3,25 +3,19 @@ import { skillGroups } from '@/lib/portfolio-data'
 
 export function SkillsSection() {
   return (
-    <section id="skills" aria-labelledby="skills-heading" className="scroll-mt-20 border-t border-border">
-      <div className="mx-auto max-w-5xl px-6 py-20">
-        <SectionHeading
-          id="skills-heading"
-          index="02 — Toolkit"
-          title="Skills"
-          description="The disciplines and tools I reach for every day, from first sketch to production."
-        />
-        <div className="grid gap-4 md:grid-cols-3">
+    <section id="skills" aria-labelledby="skills-heading" className="scroll-mt-24 border-t border-border">
+      <div className="mx-auto max-w-6xl px-6 py-20">
+        <SectionHeading id="skills-heading" eyebrow="Skills" title="Technical Skills" />
+        <div className="grid gap-6 md:grid-cols-2">
           {skillGroups.map((group) => (
-            <div key={group.title} className="rounded-2xl border border-border bg-card p-6">
-              <h3 className="mb-5 font-serif text-2xl">{group.title}</h3>
-              <ul className="flex flex-col">
+            <div key={group.title} className="rounded-xl border border-border bg-card p-6 shadow-xs">
+              <h3 className="mb-4 font-semibold text-primary">{group.title}</h3>
+              <ul className="flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <li
                     key={skill}
-                    className="flex items-center gap-3 border-t border-border py-2.5 text-sm first:border-t-0"
+                    className="rounded-md border border-border bg-muted px-3 py-1.5 text-sm transition-colors hover:border-primary/40 hover:text-primary"
                   >
-                    <span className="size-1 rounded-full bg-accent" aria-hidden="true" />
                     {skill}
                   </li>
                 ))}
