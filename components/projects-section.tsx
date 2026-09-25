@@ -45,23 +45,23 @@ export function ProjectsSection() {
           })}
         </div>
 
-        <ul className="divide-y divide-border border-y border-border" aria-live="polite">
+        <ul className="flex flex-col gap-6" aria-live="polite">
           {visible.map((project) => (
             <li key={project.title}>
               <a
                 href={project.href}
-                className="group grid gap-4 py-8 transition-colors md:grid-cols-[4rem_1fr_auto] md:items-start md:gap-8"
+                className="group grid gap-6 rounded-2xl border border-border bg-card p-8 transition-all hover:-translate-y-0.5 hover:border-primary/40 hover:shadow-lg hover:shadow-primary/5 focus-visible:ring-3 focus-visible:ring-ring/50 focus-visible:outline-none md:min-h-56 md:grid-cols-[4rem_1fr_auto] md:items-start md:gap-10 md:p-12"
               >
                 <span className="font-mono text-sm text-muted-foreground">{project.year}</span>
                 <div>
-                  <h3 className="flex items-center gap-2 font-serif text-3xl tracking-tight transition-colors group-hover:text-accent">
+                  <h3 className="flex items-center gap-2 font-serif text-4xl tracking-tight transition-colors group-hover:text-accent md:text-5xl">
                     {project.title}
                     <ArrowUpRight
-                      className="size-5 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100"
+                      className="size-6 -translate-x-1 opacity-0 transition-all group-hover:translate-x-0 group-hover:opacity-100"
                       aria-hidden="true"
                     />
                   </h3>
-                  <p className="mt-2 max-w-xl leading-relaxed text-muted-foreground text-pretty">
+                  <p className="mt-4 max-w-2xl text-lg leading-relaxed text-muted-foreground text-pretty">
                     {project.description}
                   </p>
                 </div>
